@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   vote:
@@ -10,14 +10,16 @@ services:
 
   redis:
     image: redis:alpine
-    ports: ["6379"]
+    ports: 
+      - "6379"
 
   worker:
     image: docker/example-voting-app-worker:latest
 
   db:
     image: postgres:9.4
-    ports: ["5432"]
+    ports: 
+      - "5432"
     labels:
      - "com.example.description=Postgres Database"
 
