@@ -31,7 +31,7 @@ services:
     - redis
     - postgresql
     ports:
-    - "10080:80"
+    - "82:80"
     - "10022:22"
     volumes:
     - /srv/docker/gitlab/gitlab:/home/git/data
@@ -55,14 +55,14 @@ services:
     - SSL_SELF_SIGNED=false
 
     - GITLAB_HOST=localhost
-    - GITLAB_PORT=10080
+    - GITLAB_PORT=82
     - GITLAB_SSH_PORT=10022
     - GITLAB_RELATIVE_URL_ROOT=
     - GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alphanumeric-string
     - GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alphanumeric-string
     - GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alphanumeric-string
 
-    - GITLAB_ROOT_PASSWORD=
+    - GITLAB_ROOT_PASSWORD=git1234
     - GITLAB_ROOT_EMAIL=
 
     - GITLAB_NOTIFY_ON_BROKEN_BUILDS=true
