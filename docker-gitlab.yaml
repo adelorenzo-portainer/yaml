@@ -130,4 +130,4 @@ services:
     - OAUTH_AZURE_API_SECRET=
     - OAUTH_AZURE_TENANT_ID=
     labels:
-      kompose.service.type: NodePort
+      kompose.service.type: LoadBalancer
