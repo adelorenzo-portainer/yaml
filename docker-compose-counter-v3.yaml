@@ -11,7 +11,7 @@ services:
     restart_policy:
       condition: any
   labels:
-    kompose.service.type: NodePort
+    kompose.service.type: LoadBalancer
 
  redis:
   image: redis:3.0
