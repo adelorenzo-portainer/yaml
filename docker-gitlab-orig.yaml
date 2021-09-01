@@ -35,6 +35,8 @@ services:
     - "10022:22"
     volumes:
     - /srv/docker/gitlab/gitlab:/home/git/data
+    labels:
+      kompose.service.type: LoadBalancer
     environment:
     - DEBUG=false
 
