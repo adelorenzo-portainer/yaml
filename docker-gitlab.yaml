@@ -48,7 +48,7 @@ services:
     - REDIS_HOST=redis
     - REDIS_PORT=6379
 
-    - TZ=Asia/Kolkata
+    - TZ=America/Costa_Rica
     - GITLAB_TIMEZONE=Kolkata
 
     - GITLAB_HTTPS=false
