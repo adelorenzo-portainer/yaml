@@ -17,7 +17,7 @@ services:
   frontend:
     image: gcr.io/google-samples/gb-frontend:v4
     ports:
-      - "80:80"
+      - "81:80"
     environment:
       - GET_HOSTS_FROM=dns
     labels:
