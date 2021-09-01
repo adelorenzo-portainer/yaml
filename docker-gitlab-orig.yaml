@@ -31,7 +31,7 @@ services:
     - redis
     - postgresql
     ports:
-    - "10080:80"
+    - "82:80"
     - "10022:22"
     volumes:
     - /srv/docker/gitlab/gitlab:/home/git/data
