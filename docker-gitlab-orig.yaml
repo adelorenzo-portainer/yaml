@@ -10,6 +10,9 @@ services:
     - /srv/docker/gitlab/redis:/var/lib/redis
     ports:
       - "6379"
+    labels:
+      kompose.service.type: NodePort
+      kompose.volume.storage-class-name: openebs-jiva-default      
 
   postgresql:
     restart: always
@@ -23,6 +26,9 @@ services:
     - DB_EXTENSION=pg_trgm
     ports:
       - "5432"
+    labels:
+      kompose.service.type: NodePort
+      kompose.volume.storage-class-name: openebs-jiva-default
 
   gitlab:
     restart: always
@@ -36,7 +42,8 @@ services:
     volumes:
     - /srv/docker/gitlab/gitlab:/home/git/data
     labels:
-      kompose.service.type: LoadBalancer
+      kompose.service.type: NodePort
+      kompose.volume.storage-class-name: openebs-jiva-default
     environment:
     - DEBUG=false
 
