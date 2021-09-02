@@ -156,3 +156,4 @@ services:
     - OAUTH_AZURE_TENANT_ID=
     labels:
       kompose.service.type: NodePort
+      kompose.volume.storage-class-name: openebs-jiva-default
