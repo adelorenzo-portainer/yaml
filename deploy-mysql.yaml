@@ -25,7 +25,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: mysql:5.6
+      - image: ubuntu/mysql
         name: mysql
         env:
           # Use secret in real usage
