@@ -9,8 +9,8 @@ services:
       - "443:443"
     # Mount our shared webroot volume
     volumes:
-      - .:/usr/share/nginx/html
-      - ./build/docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - commandbox_nginx:/usr/share/nginx/html
+      - commandbox_nginx_conf:/etc/nginx/nginx.conf
     links:
       - app:luceehost  
   
@@ -21,7 +21,7 @@ services:
       PORT: 8080
       SSL_PORT: 8443
     volumes:
-      - .:/app
+      - commandbox_app:/app
 
   #MySQL
   mysql:
@@ -29,6 +29,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "MyS3cur3P455!"
     volumes:
-      - ./build/docker/mysql/initdb:/docker-entrypoint-initdb.d
+      - commandbox_initdb:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
