@@ -32,3 +32,6 @@ services:
       - commandbox_initdb:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+
+volumes:
+   commandbox_app:
