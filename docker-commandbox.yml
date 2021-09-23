@@ -37,3 +37,4 @@ volumes:
    commandbox_nginx:
    commandbox_nginx_conf:
    commandbox_app:
+   commandbox_initdb:
