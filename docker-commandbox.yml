@@ -2,12 +2,16 @@ version: '3'
 
 services:
 
-  test:
+  commandbox-app:
     image: ortussolutions/commandbox
     environment:
       cfconfig_adminPassword: testing
     volumes: 
-      - ./test:/app
-      - ./build:/root/build
+      - app:/app
+      - build:/root/build
     ports:
       - "8080:8080"
+
+volumes:
+   app:
+   build:
