@@ -1,38 +1,13 @@
-version: '3'
+version: '2.1'
 
 services:
-  # NGINX Container
-  web:
-    image: nginx
-    ports: 
-      - "81:80"
-      - "443:443"
-    # Mount our shared webroot volume
-    volumes:
-      - commandbox_nginx:/usr/share/nginx/html
-    links:
-      - app:luceehost  
-  
-  # Application Server
-  app:
-    image: ortussolutions/commandbox 
-    environment:
-      PORT: 8080
-      SSL_PORT: 8443
-    volumes:
-      - commandbox_app:/app
 
-  #MySQL
-  mysql:
-    image: mysql:latest  
+  test:
+    image: ortussolutions/commandbox
     environment:
-      MYSQL_ROOT_PASSWORD: "MyS3cur3P455!"
-    volumes:
-      - commandbox_initdb:/docker-entrypoint-initdb.d
+      cfconfig_adminPassword: testing
+    volumes: 
+      - ./test:/app
+      - ./build:/root/build
     ports:
-      - "3306:3306"
-
-volumes:
-   commandbox_nginx:
-   commandbox_app:
-   commandbox_initdb:
+      - "8080:8080"
