@@ -34,4 +34,6 @@ services:
       - "3306:3306"
 
 volumes:
+   commandbox_nginx:
+   commandbox_nginx_conf:
    commandbox_app:
