@@ -10,7 +10,6 @@ services:
     # Mount our shared webroot volume
     volumes:
       - commandbox_nginx:/usr/share/nginx/html
-      - commandbox_nginx_conf:/etc/nginx/nginx.conf
     links:
       - app:luceehost  
   
@@ -35,6 +34,5 @@ services:
 
 volumes:
    commandbox_nginx:
-   commandbox_nginx_conf:
    commandbox_app:
    commandbox_initdb:
