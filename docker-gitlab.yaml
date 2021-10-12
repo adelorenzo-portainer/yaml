@@ -131,3 +131,5 @@ services:
     - OAUTH_AZURE_TENANT_ID=
     labels:
       kompose.service.type: LoadBalancer
+      kompose.volume.storage-class-name: do-block-storage
+      kompose.volume.size: 1Gi
