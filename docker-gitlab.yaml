@@ -10,8 +10,9 @@ services:
     - /srv/docker/gitlab/redis:/var/lib/redis
     ports:
       - "6379"
-    kompose.volume.storage-class-name: do-block-storage
-    kompose.volume.size: 1Gi
+    labels:
+      kompose.volume.storage-class-name: do-block-storage
+      kompose.volume.size: 1Gi
 
   postgresql:
     restart: always
@@ -25,8 +26,9 @@ services:
     - DB_EXTENSION=pg_trgm
     ports:
       - "5432"
-    kompose.volume.storage-class-name: do-block-storage
-    kompose.volume.size: 1Gi
+    labels:
+      kompose.volume.storage-class-name: do-block-storage
+      kompose.volume.size: 1Gi
 
   gitlab:
     restart: always
