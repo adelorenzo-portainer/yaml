@@ -1,7 +1,5 @@
 version: "3"
-
 services:
-
   redis-master:
     image: k8s.gcr.io/redis:e2e 
     ports:
