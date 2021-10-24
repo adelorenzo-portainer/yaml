@@ -136,6 +136,6 @@ services:
     - OAUTH_AZURE_API_SECRET=
     - OAUTH_AZURE_TENANT_ID=
     labels:
-      kompose.service.type: LoadBalancer
+      kompose.service.type: NodePort
       kompose.volume.storage-class-name: local-path
       kompose.volume.size: 1Gi
