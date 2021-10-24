@@ -11,7 +11,7 @@ services:
     ports:
       - "6379"
     labels:
-      kompose.volume.storage-class-name: standard
+      kompose.volume.storage-class-name: local-path
       kompose.volume.size: 1Gi
 
   postgresql:
@@ -27,7 +27,7 @@ services:
     ports:
       - "5432"
     labels:
-      kompose.volume.storage-class-name: standard
+      kompose.volume.storage-class-name: local-path
       kompose.volume.size: 1Gi
 
   gitlab:
@@ -137,5 +137,5 @@ services:
     - OAUTH_AZURE_TENANT_ID=
     labels:
       kompose.service.type: LoadBalancer
-      kompose.volume.storage-class-name: standard
+      kompose.volume.storage-class-name: local-path
       kompose.volume.size: 1Gi
