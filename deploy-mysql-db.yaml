@@ -1,0 +1,274 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    io.portainer.kubernetes.application.note: ""
+  creationTimestamp: "2021-11-08T03:20:31Z"
+  generation: 1
+  labels:
+    io.portainer.kubernetes.application.name: my-db
+    io.portainer.kubernetes.application.owner: joe
+    io.portainer.kubernetes.application.stack: my-db
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:io.portainer.kubernetes.application.note: {}
+        f:labels:
+          .: {}
+          f:io.portainer.kubernetes.application.name: {}
+          f:io.portainer.kubernetes.application.owner: {}
+          f:io.portainer.kubernetes.application.stack: {}
+      f:spec:
+        f:podManagementPolicy: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:serviceName: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+              f:io.portainer.kubernetes.application.name: {}
+          f:spec:
+            f:containers:
+              k:{"name":"my-db"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"MYSQL_ROOT_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/var/lib/mysql"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"my-db-f3ebdf2a-3168-4fef-84c3-5181091b3c4c"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+        f:updateStrategy:
+          f:rollingUpdate:
+            .: {}
+            f:partition: {}
+          f:type: {}
+        f:volumeClaimTemplates: {}
+    manager: Mozilla
+    operation: Update
+    time: "2021-11-08T03:20:31Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:collisionCount: {}
+        f:currentReplicas: {}
+        f:currentRevision: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updateRevision: {}
+        f:updatedReplicas: {}
+    manager: k3s
+    operation: Update
+    time: "2021-11-08T03:20:37Z"
+  name: my-db
+  namespace: db
+  resourceVersion: "4443"
+  uid: 7bf3ec8e-173e-4fc6-bb9c-223f56a5da90
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: my-db
+  serviceName: headless-my-db
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-db
+        io.portainer.kubernetes.application.name: my-db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: db12340
+        image: ubuntu/mysql:latest
+        imagePullPolicy: Always
+        name: my-db
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: my-db-f3ebdf2a-3168-4fef-84c3-5181091b3c4c
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: my-db-f3ebdf2a-3168-4fef-84c3-5181091b3c4c
+        persistentVolumeClaim:
+          claimName: my-db-f3ebdf2a-3168-4fef-84c3-5181091b3c4c
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-db
+        io.portainer.kubernetes.application.name: my-db
+        io.portainer.kubernetes.application.owner: joe
+      name: my-db-f3ebdf2a-3168-4fef-84c3-5181091b3c4c
+      namespace: db
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10G
+      storageClassName: local-path
+      volumeMode: Filesystem
+    status:
+      phase: Pending
+status:
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: my-db-79fcbb4886
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: my-db-79fcbb4886
+  updatedReplicas: 1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-11-08T03:20:31Z"
+  labels:
+    io.portainer.kubernetes.application.name: my-db
+    io.portainer.kubernetes.application.owner: joe
+    io.portainer.kubernetes.application.stack: my-db
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:io.portainer.kubernetes.application.name: {}
+          f:io.portainer.kubernetes.application.owner: {}
+          f:io.portainer.kubernetes.application.stack: {}
+      f:spec:
+        f:clusterIP: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: Mozilla
+    operation: Update
+    time: "2021-11-08T03:20:31Z"
+  name: headless-my-db
+  namespace: db
+  resourceVersion: "4396"
+  uid: 05d4a2e5-503a-4478-9a83-23b23ef8ec92
+spec:
+  clusterIP: None
+  clusterIPs:
+  - None
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  selector:
+    app: my-db
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-11-08T03:20:31Z"
+  labels:
+    io.portainer.kubernetes.application.name: my-db
+    io.portainer.kubernetes.application.owner: joe
+    io.portainer.kubernetes.application.stack: my-db
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:io.portainer.kubernetes.application.name: {}
+          f:io.portainer.kubernetes.application.owner: {}
+          f:io.portainer.kubernetes.application.stack: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":3306,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: Mozilla
+    operation: Update
+    time: "2021-11-08T03:20:31Z"
+  name: my-db
+  namespace: db
+  resourceVersion: "4395"
+  uid: af854ecb-62a3-4d1b-8c48-14b489e72a60
+spec:
+  clusterIP: 10.43.169.234
+  clusterIPs:
+  - 10.43.169.234
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: my-db-3306-tcp
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: my-db
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
