@@ -6,3 +6,5 @@ services:
     restart: always
     ports:
       - 8085:80
+    labels:
+      kompose.service.type: nodeport
