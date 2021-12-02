@@ -5,4 +5,4 @@ services:
     image: caddy
     restart: always
     ports:
-      - 8085:80
+      - 8087:80
