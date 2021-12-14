@@ -26,6 +26,10 @@ spec:
     spec:
       containers:
       - image: ubuntu/mysql
+      resources:
+        requests:
+          memory: "1024Mi"
+          cpu: "500m"
         name: mysql
         env:
           # Use secret in real usage
