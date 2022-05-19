@@ -1,6 +1,6 @@
 services:
-  whoami:
-    image: "registry.oe74.net/portainer-microbot"
+  microbot:
+    image: "registry.oe74.net/adelorenzo/portainer-microbot"
     container_name: "portainer-microbot"
     ports:
       - "80:80"``
