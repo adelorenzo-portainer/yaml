@@ -29,15 +29,15 @@ spec:
         name: mysql
         resources:
           limits:
-            cpu: ".5"
-            memory: 512M
+            cpu: "1"
+            memory: 1024M
           requests:
-            cpu: ".5"
-            memory: 512M        
+            cpu: "1"
+            memory: 1024M        
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
-          value: db1234
+          value: 1234db
         ports:
         - containerPort: 3306
           name: mysql
