@@ -56,7 +56,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: hostpath
+  storageClassName: microk8s-hostpath
   capacity:
     storage: 20Gi
   accessModes:
@@ -69,7 +69,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
 spec:
-  storageClassName: hostpath
+  storageClassName: microk8s-hostpath
   accessModes:
     - ReadWriteOnce
   resources:
