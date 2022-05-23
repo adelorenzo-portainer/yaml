@@ -58,7 +58,7 @@ metadata:
 spec:
   storageClassName: do-block-storage
   capacity:
-    storage: 20Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -74,4 +74,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 5Gi
