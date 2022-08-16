@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  node-red:
+    image: nodered/node-red:latest
+    deploy:
+      mode: replicated
+      replicas: 2
+    environment:
+      - TZ=Europe/Amsterdam
+    networks:
+      - node-red-net
+    volumes:
+      - node-red-data:/data
+
+volumes:
+  node-red-data:
+
+networks:
+  node-red-net:
