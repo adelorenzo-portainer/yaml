@@ -37,7 +37,7 @@ spec:
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
-          value: db1234
+          value: joseph1234
         ports:
         - containerPort: 3306
           name: mysql
