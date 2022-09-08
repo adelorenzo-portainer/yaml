@@ -12,7 +12,7 @@ services:
       - "6379"
     labels:
       kompose.service.type: NodePort
-      kompose.volume.storage-class-name: openebs-jiva-default      
+      kompose.volume.storage-class-name: nfs-csi
 
   postgresql:
     restart: always
@@ -28,7 +28,7 @@ services:
       - "5432"
     labels:
       kompose.service.type: NodePort
-      kompose.volume.storage-class-name: openebs-jiva-default
+      kompose.volume.storage-class-name: nfs-csi
 
   gitlab:
     restart: always
@@ -43,7 +43,7 @@ services:
     - /srv/docker/gitlab/gitlab:/home/git/data
     labels:
       kompose.service.type: NodePort
-      kompose.volume.storage-class-name: openebs-jiva-default
+      kompose.volume.storage-class-name: nfs-csi
     environment:
     - DEBUG=false
 
@@ -163,4 +163,4 @@ services:
     - OAUTH_AZURE_TENANT_ID=
     labels:
       kompose.service.type: NodePort
-      kompose.volume.storage-class-name: openebs-jiva-default
+      kompose.volume.storage-class-name: nfs-csi
