@@ -5,7 +5,7 @@ services:
     image: nodered/node-red:latest
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 5
     environment:
       - TZ=Europe/Amsterdam
     networks:
