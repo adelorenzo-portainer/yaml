@@ -2,8 +2,6 @@
 
 FLAG="/var/log/firstboot.log"
 if [[ ! -f $FLAG ]]; then
-   #Put here your initialization sentences
-   echo "This is the first boot"
    PORTAINER_EDGE_ID=$(hostname)
    podman run -d \
      -v /run/podman/podman.sock:/var/run/docker.sock \
