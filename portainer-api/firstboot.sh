@@ -15,7 +15,7 @@ if [[ ! -f $FLAG ]]; then
      --restart always \
      -e EDGE=1 \
      -e EDGE_ID=$PORTAINER_EDGE_ID \
-     -e EDGE_KEY=aHR0cHM6Ly8xOTIuMTY4LjEwLjM6OTQ0M3wxOTIuMTY4LjEwLjM6ODAwMHxjMzpkZDo1ZTpjNDozODo4NzpiZToyYzpmODpjNDo3ODo2YTpmNzo0MTpkYjpjZHww \
+     -e EDGE_KEY=<REPLACE WITH PORTAINER EDGE KEY> \
      -e EDGE_INSECURE_POLL=1 \
      --name portainer_edge_agent \
      docker.io/portainer/agent:2.15.1
