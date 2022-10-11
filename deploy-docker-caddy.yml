@@ -5,6 +5,6 @@ services:
     image: caddy
     restart: always
     ports:
-      - 8077:80
+      - 8099:80
     labels:
       kompose.service.type: nodeport
