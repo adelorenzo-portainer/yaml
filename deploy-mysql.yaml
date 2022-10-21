@@ -39,7 +39,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
+              name: mysql-pass1
               key: password
         ports:
         - containerPort: 3306
