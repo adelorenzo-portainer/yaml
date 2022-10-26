@@ -6,7 +6,13 @@ The examples below require setting the following environment variables:
 - $PASSWORD: the password of the admin user of the Portainer server
 - $API_KEY: the private API key for the admin user of the Portainer server. This key can be generated here:
 
+#### Step one - access account
 ![Access account](https://github.com/adelorenzo-portainer/yaml/blob/main/grafana-kube/api/images/my_account.png?raw=true)
+#### Step two - click on 'Add acess token' button
+![Add access token](https://github.com/adelorenzo-portainer/yaml/blob/main/grafana-kube/api/images/access_token1.png?raw=true)
+#### Step three - token created - makes sure to copy the access token before closing the creation window. It will only appear once.
+![Token created](https://github.com/adelorenzo-portainer/yaml/blob/main/grafana-kube/api/images/access_token2.png?raw=true)
+
 
 #### adding environment tags
 this API call adds the tag ``humidity``
