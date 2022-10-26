@@ -9,7 +9,7 @@ The examples below require setting the following environment variables:
 - $PASSWORD: the password of the admin user of the Portainer server
 - $API_KEY: the private API key for the admin user of the Portainer server. This key can be generated here:
 
-</hl>
+---
 
 #### Step one - access account
 ![Access account](https://github.com/adelorenzo-portainer/yaml/blob/main/grafana-kube/api/images/my_account.png?raw=true)
