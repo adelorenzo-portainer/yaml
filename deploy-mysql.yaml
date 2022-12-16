@@ -29,10 +29,10 @@ spec:
         name: mysql
         resources:
           limits:
-            cpu: "1"
+            cpu: "1.5"
             memory: 1024M
           requests:
-            cpu: "1"
+            cpu: "1.5"
             memory: 1024M        
         env:
           # Use secret in real usage
