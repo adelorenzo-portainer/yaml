@@ -5,7 +5,9 @@ services:
     image: nodered/node-red:latest
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 1
+    ports:
+      - 7778:80
     environment:
       - TZ=Europe/Amsterdam
     networks:
