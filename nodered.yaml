@@ -6,8 +6,6 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-    ports:
-      - 7778:80
     environment:
       - TZ=Europe/Amsterdam
     networks:
