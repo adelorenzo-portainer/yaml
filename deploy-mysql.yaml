@@ -29,11 +29,11 @@ spec:
         name: mysql
         resources:
           limits:
-            cpu: "2"
-            memory: 2048M
+            cpu: ".5"
+            memory: 512M
           requests:
-            cpu: "2"
-            memory: 2048M        
+            cpu: ".5"
+            memory: 512M        
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
