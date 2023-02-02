@@ -14,7 +14,7 @@ kind: Deployment
 metadata:
   name: mysql
 spec:
-  replicas: 9
+  replicas: 5
   selector:
     matchLabels:
       app: mysql
