@@ -6,8 +6,6 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-    environment:
-      - TZ=Europe/Amsterdam
     networks:
       - node-red-net
     volumes:
