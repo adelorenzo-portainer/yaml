@@ -2,6 +2,6 @@ version: '3.3'
 services:
     nginx:
         ports:
-            - '5548:8443'
+            - '5548:80'
         container_name: unifi22
         image: 'caddy/caddy'
