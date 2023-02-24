@@ -4,4 +4,4 @@ services:
         ports:
             - '5548:8443'
         container_name: unifi22
-        image: 'linuxserver/unifi-controller'
+        image: 'caddy/caddy'
