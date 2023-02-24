@@ -2,6 +2,6 @@ version: '3.3'
 services:
     nginx:
         ports:
-            - '9973:8443'
+            - '5548:8443'
         container_name: unifi22
         image: 'linuxserver/unifi-controller'
