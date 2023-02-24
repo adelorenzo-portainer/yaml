@@ -2,6 +2,6 @@ version: '3.3'
 services:
     nginx:
         ports:
-            - '9976:80'
+            - '9973:80'
         container_name: web22
         image: 'caddy/caddy'
