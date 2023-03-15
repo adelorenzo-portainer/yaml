@@ -4,7 +4,7 @@ services:
     image: containous/whoami
     container_name: whoami
     ports:
-      - 6654:80
+      - 6656:80
       
   uni-controller:
     image: linuxserver/unifi-controller
