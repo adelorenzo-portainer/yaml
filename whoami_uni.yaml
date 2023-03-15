@@ -1,0 +1,13 @@
+version: "3"
+services:
+  whoami:
+    image: containous/whoami
+    container_name: whoami
+    ports:
+      - 6654:80
+      
+  uni-controller:
+    image: linuxserver/unifi-controller
+    container_name: uni-controller
+    ports:
+      - 9965:8080
