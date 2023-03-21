@@ -34,6 +34,6 @@ spec:
     app: phpmyadmin
   ports:
     - protocol: TCP
-      port: 30080
+      port: 80
       targetPort: 80
-  clusterIP: None
+      nodePort: 30080
