@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+    couchdb:
+        ports:
+            - '5984:5984'
+        container_name: couchdb
+        image: couchdb
