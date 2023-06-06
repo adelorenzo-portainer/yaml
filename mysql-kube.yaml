@@ -31,7 +31,7 @@ spec:
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: bipsolutions1234
+          value: envision1234
         - name: MYSQL_DATABASE
           value: mydb
         ports:
