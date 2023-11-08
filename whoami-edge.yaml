@@ -2,6 +2,6 @@ version: "3"
 services:
   whoami:
     image: "containous/whoami"
-    container_name: whoami
+    container_name: whoami89
     ports:
       - 7745:80
