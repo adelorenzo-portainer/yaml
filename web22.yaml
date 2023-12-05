@@ -3,5 +3,5 @@ services:
     caddy:
         ports:
             - '5548:80'
-        container_name: webapp56
+        container_name: webapp22
         image: 'caddy/caddy'
