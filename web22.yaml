@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-    caddy:
+    nginx:
         ports:
             - '5548:80'
-        container_name: webapp22
-        image: 'caddy/caddy'
+        container_name: web22
+        image: 'nginx'
