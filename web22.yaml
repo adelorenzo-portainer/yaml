@@ -2,6 +2,6 @@ version: '3.3'
 services:
     nginx:
         ports:
-            - '5548:80'
+            - '5549:80'
         container_name: web22
         image: 'nginx'
