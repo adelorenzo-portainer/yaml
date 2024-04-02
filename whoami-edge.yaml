@@ -4,4 +4,4 @@ services:
     image: "containous/whoami"
     container_name: whoami89
     ports:
-      - 7790:80
+      - 7789:80
