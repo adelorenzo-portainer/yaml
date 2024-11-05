@@ -3,7 +3,7 @@ services:
     image: nodered/node-red:latest
     deploy:
       mode: replicated
-      replicas: 12
+      replicas: 4
     networks:
       - node-red-net
     volumes:
