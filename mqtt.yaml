@@ -1,0 +1,60 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: mosquitto
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquitto
+  namespace: mosquitto
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mosquitto
+  template:
+    metadata:
+      labels:
+        app: mosquitto
+    spec:
+      containers:
+      - name: mosquitto
+        image: eclipse-mosquitto
+        ports:
+        - containerPort: 1883
+        volumeMounts:
+        - name: config-volume
+          mountPath: /mosquitto/config
+          readOnly: true
+      volumes:
+        - name: config-volume
+          configMap:
+            name: mosquitto-config
+            items:
+              - key: mosquitto.conf
+                path: mosquitto.conf
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mosquitto-config
+  namespace: mosquitto
+data:
+  mosquitto.conf: |
+    listener 1883
+    allow_anonymous true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mosquitto-mqtt
+  namespace: mosquitto
+spec:
+  selector:
+    app: mosquitto  
+  ports:
+    - protocol: TCP
+      port: 1883
+      targetPort: 1883
+  type: NodePort
