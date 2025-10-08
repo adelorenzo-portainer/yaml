@@ -4,6 +4,6 @@ services:
     restart: always
     command: /bin/sh -c "redis-server --requirepass $$REDIS_HOST_PASSWORD"
     ports:
-      - 6383:6379
+      - 6388:6379
     env_file:
       - redis.env
