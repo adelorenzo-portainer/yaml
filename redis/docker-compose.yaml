@@ -3,4 +3,6 @@ services:
     image: redis:alpine
     restart: always
     command: /bin/sh -c "redis-server --requirepass 12345"
+    ports:
+      - 6378:6379
 
