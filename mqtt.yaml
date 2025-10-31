@@ -9,7 +9,7 @@ metadata:
   name: mosquitto
   namespace: mosquitto
 spec:
-  replicas: 23
+  replicas: 8
   selector:
     matchLabels:
       app: mosquitto
