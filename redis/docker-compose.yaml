@@ -4,5 +4,5 @@ services:
     restart: always
     command: /bin/sh -c "redis-server --requirepass 12345"
     ports:
-      - 6377:6379
+      - 6350:6379
 
